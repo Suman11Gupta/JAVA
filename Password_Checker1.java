@@ -45,7 +45,6 @@ public class Password_Checker1 {
         System.out.println(" 3. ) Dennis Ritchie");
         System.out.println(" 4. ) Bjarne Stroustrup");
         System.out.println("Select your answer: ");
-
         selectedAnswer=sc.nextInt();
 
         switch(selectedAnswer){
@@ -58,21 +57,18 @@ public class Password_Checker1 {
                 System.out.println(" 4. ) JVM");
                 System.out.println("Select your answer: ");
                 selectedAnswer=sc.nextInt();
-
+              
                 switch(selectedAnswer){
                     case 3:
                         System.out.println(" select Right Answer ");
                         break;
-
                     default:
                         System.out.println(" Try next year... ");
                         break;
                 }
+                
                 break;
-
-
-
-            default:
+                default:
                 System.out.println("Try next year...");
                 break;
             }
