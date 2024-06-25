@@ -36,6 +36,8 @@ public class Salary_System {
         System.out.println("Basic Salary: "+salaryBasic);
         leaveAmount=(salaryBasic/totalWorkingDays)*leaves;
         System.out.println("Leaves Amount: "+leaveAmount);
+        conveyanceAllowance=(yearlySalary*conveyanceAllowance)/100;
+        System.out.println("Conveyance Allowance: "+conveyanceAllowance);
         
     }
 }
