@@ -1,6 +1,6 @@
 package Java;
 
-import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class Student {
     String name[];
