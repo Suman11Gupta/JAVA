@@ -8,7 +8,7 @@ public class EmployeeMain {
         Scanner sc=new Scanner(System.in);
         int answer;
         String name;
-        int id;
+        int id=0,sid,did,size=obj.size(),a = 0;
         int salary;
 
         while(true){
@@ -32,7 +32,19 @@ public class EmployeeMain {
                     break;
 
                 case 2:
-
+                    System.out.println("Enter Employee Name: ");
+                    break;
+                case 3:
+                    System.out.println("Enter Employee ID: ");
+                    did=sc.nextInt();
+                    for(int i=0;i<size;i++){
+                        if(did==id){
+                            break;
+                        }
+                        ++a;
+                    }
+                    obj.remove(a);
+                    break;
 
                 case 4:
                    for(Employee c:obj){
@@ -40,6 +52,17 @@ public class EmployeeMain {
                    }
                    break;
 
+                case 5:
+                    System.out.println("Enter Employee Id: ");
+                    sid=sc.nextInt();
+                    for(int i=0;i<size;i++){
+                        if(sid==id){
+                            break;
+                        }
+                        a++;
+                    }
+                    System.out.println(obj.get(a+1));
+                    break;
             }
         }
 
