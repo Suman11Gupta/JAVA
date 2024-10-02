@@ -3,12 +3,13 @@ import java.util.*;
 import java.util.ArrayList;
 
 public class EmployeeMain {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
         List<Employee> obj=new ArrayList<Employee>();
         Scanner sc=new Scanner(System.in);
         int answer;
-        String name;
-        int id=0,sid,did,size=obj.size(),a = 0;
+        String name,nname;
+        int id=0,sid,did,uid,size=obj.size(),a = 0;
+        int nid,nsalary;
         int salary;
 
         while(true){
@@ -32,36 +33,65 @@ public class EmployeeMain {
                     break;
 
                 case 2:
-                    System.out.println("Enter Employee Name: ");
+                    System.out.println("Enter Employee Id: ");
+                    uid=sc.nextInt();
+                    Iterator<Employee> itr1= obj.iterator();
+                    while(itr1.hasNext()){
+                        Employee ob=itr1.next();
+                        if(ob.getId()==uid)
+                        {
+                            System.out.println("Enter Employee Name: ");
+                            nname=sc.next();
+                            System.out.println("Enter Employee ID: ");
+                            nid=sc.nextInt();
+                            System.out.println("Enter Employee Salary: ");
+                            nsalary=sc.nextInt();
+//                            obj.set(ob.setId(nid));
+                            break;
+                        }
+                    }
                     break;
                 case 3:
                     System.out.println("Enter Employee ID: ");
                     did=sc.nextInt();
-                    for(int i=0;i<size;i++){
-                        if(did==id){
-                            break;
-                        }
-                        ++a;
+                    Iterator<Employee> itr= obj.iterator();
+                    while(itr.hasNext()){
+                      Employee ob=itr.next();
+                      if(ob.getId()==did)
+                      {
+                          obj.remove(ob);
+                          break;
+                      }
                     }
-                    obj.remove(a);
+//                    for(int i=0;i<size;i++){
+//                        if(did==id){
+//                            break;
+//                        }
+//                        ++a;
+//                    }
+//                    obj.remove(a);
                     break;
 
                 case 4:
-                   for(Employee c:obj){
-                       System.out.println(c);
-                   }
-                   break;
+                    for(Employee c:obj){
+                        System.out.println(c);
+                    }
+                    break;
 
                 case 5:
                     System.out.println("Enter Employee Id: ");
                     sid=sc.nextInt();
-                    for(int i=0;i<size;i++){
-                        if(sid==id){
-                            break;
-                        }
-                        a++;
-                    }
-                    System.out.println(obj.get(a+1));
+
+
+
+
+//                    for(int i=0;i<size;i++){
+//                        if(sid==id){
+//                            break;
+//                        }
+//                        a++;
+//                    }
+//                    System.out.println(obj.get(a+1));
                     break;
             }
         }
