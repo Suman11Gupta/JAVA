@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.ArrayList;
 
 public class EmployeeMain {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
         List<Employee> obj=new ArrayList<Employee>();
         Scanner sc=new Scanner(System.in);
         int answer;
@@ -21,6 +21,7 @@ public class EmployeeMain {
             System.out.println("....................................");
             System.out.println("Select:");
             answer=sc.nextInt();
+
             switch(answer){
                 case 1:
                     System.out.println("Enter Employee Name: ");
@@ -46,23 +47,28 @@ public class EmployeeMain {
                             nid=sc.nextInt();
                             System.out.println("Enter Employee Salary: ");
                             nsalary=sc.nextInt();
-//                            obj.set(ob.setId(nid));
+                            ob.setName(nname);
+                            ob.setId(nid);
+                            ob.setSalary(nsalary);
                             break;
                         }
                     }
                     break;
+
                 case 3:
                     System.out.println("Enter Employee ID: ");
                     did=sc.nextInt();
                     Iterator<Employee> itr= obj.iterator();
                     while(itr.hasNext()){
-                      Employee ob=itr.next();
-                      if(ob.getId()==did)
-                      {
-                          obj.remove(ob);
-                          break;
-                      }
+                        Employee ob=itr.next();
+                        if(ob.getId()==did)
+                        {
+                            obj.remove(ob);
+                            break;
+                        }
                     }
+                    break;
+
 //                    for(int i=0;i<size;i++){
 //                        if(did==id){
 //                            break;
@@ -70,7 +76,7 @@ public class EmployeeMain {
 //                        ++a;
 //                    }
 //                    obj.remove(a);
-                    break;
+
 
                 case 4:
                     for(Employee c:obj){
@@ -81,9 +87,20 @@ public class EmployeeMain {
                 case 5:
                     System.out.println("Enter Employee Id: ");
                     sid=sc.nextInt();
+                    Iterator<Employee> itr2= obj.iterator();
+                    while(itr2.hasNext()){
+                        Employee ob=itr2.next();
+                        if(ob.getId()==sid)
+                        {
+                            System.out.println(ob);
+//                            System.out.println(ob.getName());
+//                            System.out.println(ob.getId());
+//                            System.out.println(ob.getSalary());
+                            break;
+                        }
 
-
-
+                    }
+                    break;
 
 //                    for(int i=0;i<size;i++){
 //                        if(sid==id){
@@ -92,7 +109,7 @@ public class EmployeeMain {
 //                        a++;
 //                    }
 //                    System.out.println(obj.get(a+1));
-                    break;
+
             }
         }
 
