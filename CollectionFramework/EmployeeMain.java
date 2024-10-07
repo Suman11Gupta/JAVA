@@ -11,6 +11,7 @@ public class EmployeeMain {
         int id=0,sid,did,uid,size=obj.size(),a = 0;
         int nid,nsalary;
         int salary;
+        int sorting;
 
         while(true){
             System.out.println("1.)Insert");
@@ -18,6 +19,7 @@ public class EmployeeMain {
             System.out.println("3.)Delete");
             System.out.println("4.)Show");
             System.out.println("5.)Search");
+            System.out.println("6.)Sorting");
             System.out.println("....................................");
             System.out.println("Select:");
             answer=sc.nextInt();
@@ -69,15 +71,6 @@ public class EmployeeMain {
                     }
                     break;
 
-//                    for(int i=0;i<size;i++){
-//                        if(did==id){
-//                            break;
-//                        }
-//                        ++a;
-//                    }
-//                    obj.remove(a);
-
-
                 case 4:
                     for(Employee c:obj){
                         System.out.println(c);
@@ -98,20 +91,39 @@ public class EmployeeMain {
 //                            System.out.println(ob.getSalary());
                             break;
                         }
-
                     }
                     break;
 
-//                    for(int i=0;i<size;i++){
-//                        if(sid==id){
-//                            break;
-//                        }
-//                        a++;
-//                    }
-//                    System.out.println(obj.get(a+1));
-
+                case 6:
+                    System.out.println("1.)Sorted By Name");
+                    System.out.println("2.)Sorted By Id");
+                    System.out.println("3.)Sorted By Salary");
+                    System.out.println("Select Any 1 Option");
+                    sorting=sc.nextInt();
+                    switch(sorting){
+                        case 1:
+                            System.out.println("Sorted By Name");
+                            Collections.sort(obj,new emp_Name());
+                            for(Employee c:obj){
+                                System.out.println(c);
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Sorted By Id");
+                            Collections.sort(obj,new emp_Id());
+                            for(Employee c:obj){
+                                System.out.println(c);
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Sorted By Salary");
+                            Collections.sort(obj,new emp_Salary());
+                            for(Employee c:obj){
+                                System.out.println(c);
+                            }
+                            break;
+                    }
             }
         }
-
     }
 }
