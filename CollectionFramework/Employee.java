@@ -1,4 +1,5 @@
 package CollectionFramework;
+import java.util.Comparator;
 
 public class Employee {
     String name;
@@ -10,6 +11,7 @@ public class Employee {
         this.id = id;
         this.salary = salary;
     }
+
 
     public String getName() {
         return name;
@@ -42,5 +44,23 @@ public class Employee {
                 ", id=" + id +
                 ", salary=" + salary +
                 '}';
+    }
+}
+
+class emp_Id implements Comparator<Employee> {
+        public int compare(Employee arg1,Employee arg2){
+            return (int) arg1.id-arg2.id;
+    }
+}
+
+class emp_Name implements Comparator<Employee>{
+    public int compare(Employee arg1,Employee arg2){
+        return (int) arg1.name.compareTo(arg2.name);
+    }
+}
+
+class emp_Salary implements Comparator<Employee> {
+    public int compare(Employee arg1,Employee arg2){
+        return (int) arg1.salary-arg2.salary;
     }
 }
