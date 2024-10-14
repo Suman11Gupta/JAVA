@@ -1,10 +1,11 @@
-package Generics;
+package CollectionFramework;
 
 public class Author {
     int Id;
     String name,city;
-
-    public Author(int id, String name, String city) {
+    Book book;
+    public Author(int id, String name, String city,Book book) {
+        this.book=book;
         Id = id;
         this.name = name;
         this.city = city;
@@ -40,6 +41,7 @@ public class Author {
                 "Id=" + Id +
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
+                book+
                 '}';
     }
 }
