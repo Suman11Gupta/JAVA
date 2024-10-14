@@ -1,4 +1,4 @@
-package Generics;
+package CollectionFramework;
 import java.util.*;
 public class AuthorMain {
 
@@ -7,39 +7,43 @@ public class AuthorMain {
         int nid;
 
         List <Author> obj=new ArrayList<Author>();
-        obj.add(new Author(101,"SS","Mumbai"));
-        obj.add(new Author(102,"SD","Maharashtra"));
-        obj.add(new Author(103,"SV","Pune"));
+        obj.add(new Author(101,"SS","Mumbai",new Book(11,589,"English")));
+        obj.add(new Author(102,"SD","Maharashtra",new Book(12,566,"Maths")));
+        obj.add(new Author(103,"SV","Pune",new Book(11,589,"History")));
         for(Author ob:obj){
             System.out.println(ob);
         }
 
-        List <Book> obj1=new ArrayList<Book>();
-        obj1.add(new Book(11,589,"English"));
-        obj1.add(new Book(12,566,"Maths"));
-        obj1.add(new Book(11,589,"History"));
-        for(Book ob1:obj1){
-            System.out.println(ob1);
-        }
-
-        System.out.println("Enter Author Id: ");
+        System.out.println("Enter Author Id You want To Delete: ");
         nid=sc.nextInt();
-       switch (nid){
-           case 101:
-               obj.remove(0);
-               break;
-           case 102:
-               obj.remove(1);
-               break;
-           case 103:
-               obj.remove(2);
-               break;
-       }
+
+//        switch (nid){
+//            case 101:
+//                obj.remove(0);
+//                break;
+//            case 102:
+//                obj.remove(1);
+//                break;
+//            case 103:
+//                obj.remove(2);
+//                break;
+//        }
+//        for(Author ob:obj){
+//            System.out.println(ob);
+//        }
+
+         Iterator<Author> itr=obj.iterator();
+        while(itr.hasNext()){
+            Author ob=itr.next();
+            if(ob.getId()==nid){
+                obj.remove(ob);
+                break;
+            }
+        }
+
         for(Author ob:obj){
             System.out.println(ob);
         }
-
-
 
     }
 }
