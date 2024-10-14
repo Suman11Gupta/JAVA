@@ -1,4 +1,4 @@
-package Generics;
+package CollectionFramework;
 
 public class Book {
     int bid,np;
