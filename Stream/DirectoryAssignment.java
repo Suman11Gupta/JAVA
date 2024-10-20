@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class DirectoryAssignment {
     public static void main(String[] args) {
         String dir;
-       String choice,sub;
+        String choice,sub;
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the directory: ");
         dir=sc.nextLine();
@@ -18,9 +18,9 @@ public class DirectoryAssignment {
         }
 
         while(true){
-            System.out.println("Do you want to open sub directory? Y/N");
+            System.out.println("Do you want to open sub directory? Yes/No");
             choice=sc.nextLine();
-            if(choice.equals("Y")){
+            if(choice.equals("Yes")){
                 System.out.println("1.Enter sub directory name: ");
                 sub=sc.nextLine();
                 File obj1=new File(dir,sub);
@@ -31,12 +31,12 @@ public class DirectoryAssignment {
                     else
                         System.out.println("Files---->\t\t"+ob1);
                 }
-            }
-                break;
 
+            } else if (choice.equals("No")) {
+                break;
+            }
         }
 
 
     }
-
 }
