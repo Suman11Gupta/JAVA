@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>FirstServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 
+ <servlet>
+ <servlet-name>MyServ</servlet-name>
+ <servlet-class>com.basic.First</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ <servlet-name>MyServ</servlet-name>
+ <url-pattern>/test</url-pattern>
+ </servlet-mapping>
+   -->
+  
+  <servlet>
+  <servlet-name>ConfiggDemo</servlet-name>
+  <servlet-class>com.basic.ConfigDemo</servlet-class>
+  <init-param> 
+  <param-name>Bank</param-name>
+  <param-value>SBI</param-value>
+  </init-param>
+  <init-param>
+  <param-name>password</param-name>
+  <param-value>2024</param-value>
+  </init-param>
+  
+  </servlet>
+  
+  <servlet-mapping>
+ <servlet-name>ConfiggDemo</servlet-name>
+ <url-pattern>/Configtest</url-pattern>
+ </servlet-mapping>
+  
+</web-app>
+
+
