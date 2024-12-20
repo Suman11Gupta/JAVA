@@ -14,6 +14,18 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class ConfigDemo
  */
 //@WebServlet("/ConfigDemo")
+
+//without Xml----------->
+@WebServlet(
+		urlPatterns={"/Thankyou"},
+		initParams= {
+				@WebInitParam(name="Bank",value="SBI"),
+				@WebInitParam(name="password",value="2023")
+		}
+		)
+
+//--------------------
+	
 public class ConfigDemo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
